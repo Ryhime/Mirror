@@ -1,0 +1,17 @@
+<h1>Info</h1>
+<div id="Time">
+    <h2 [innerHTML]="getTime()"></h2>
+    <table>
+        <tr>
+            <td *ngFor="let block of [].constructor(getNumSecondBlocks(maxNumSecondBlocks))">
+                <img src="images/square.png">
+            </td>
+            <td *ngIf="date.getSeconds()%blinkBlockSeconds==0">
+                <img src="images/square.png">
+            </td>
+        </tr>   
+    </table>    
+</div>
+<div id="Date">
+    <h2 [innerHTML]="getDate()"></h2>
+</div>
