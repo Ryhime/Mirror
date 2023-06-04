@@ -1,0 +1,20 @@
+<div id="Day">
+<h1 [innerHTML]="getWelcomeText()"></h1>
+
+</div>
+<div id="time">
+    <h2 [innerHTML]="getTime()" id="hours-minutes"></h2>
+    <table>
+        <tr>
+            <td *ngFor="let block of [].constructor(getNumSecondBlocks(maxNumSecondBlocks))">
+                <img src="../../assets/images/BlackDot.png" id="seconds-counter">
+            </td>
+            <td *ngIf="date.getSeconds()%blinkBlockSeconds==0">
+                <img src="../../assets/images/BlackDot.png" id='seconds-counter'>
+            </td>
+        </tr>   
+    </table>
+</div>
+<div id="date">
+    <h2 [innerHTML]="getDate()"></h2>
+</div>
