@@ -1,0 +1,20 @@
+#header{
+    text-decoration: underline;
+    text-align: center;
+}
+#awake-time-dropdown{
+    width: 50px;
+    height: 25px;
+}
+#awake-afternoon-dropdown{
+    width: 50px;
+    height: 25px;
+}
+#sleep-time-dropdown{
+    width: 50px;
+    height: 25px;
+}
+#sleep-afternoon-dropdown{
+    width: 50px;
+    height: 25px;
+}
