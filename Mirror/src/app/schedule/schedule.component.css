@@ -1,0 +1,22 @@
+#current-time{
+    position: absolute;
+    width:500px;
+}
+#schedule{
+    position: relative;
+    top: 10px;
+}
+#events{
+    vertical-align: middle;
+}
+#hours{
+    display: table-cell;
+vertical-align: middle;
+}
+.event{
+    position: absolute;
+    left: 50px;
+}
+.hour{
+    position:absolute;
+}

@@ -1,1 +1,40 @@
-<p>settings works!</p>
+<h2 id="header">Settings</h2>
+<div id="awake">
+    <h3 id="awake-header">Awake Time</h3>
+    <select id="awake-time-dropdown"
+    #awakeTimeDropdown
+    (change)="changedAwakeTime(awakeTimeDropdown.value)"
+    [ngModel]="awakeTime">
+        <option *ngFor="let time of times" 
+        [label]="time" [value]="time" class="awake-time-option"></option>
+    </select>
+    <select id="awake-afternoon-dropdown"
+    #awakeAfternoonDroopdown
+    (change)="changedAwakeAfternoon(awakeAfternoonDroopdown.value)"
+    [ngModel]="awakeAfternoon">
+        <option value="AM" label="AM" 
+        class="awake-afternoon-option"></option>
+        <option value="PM" label="PM"
+        class="awake-afternoon-option"></option>
+    </select>
+</div>
+
+<div id="sleep">
+    <h3 id="sleep-header">Sleep Time</h3>
+    <select id="sleep-time-dropdown"
+    #sleepTimeDropdown
+    (change)="changedSleepTime(sleepTimeDropdown.value)"
+    [ngModel]="sleepTime">
+        <option *ngFor="let time of times"
+        [label]="time" [value]="time"></option>
+    </select>
+        <select id="sleep-afternoon-dropdown"
+        #sleepAfternoonDropdown
+        (change)="changedSleepAfternoon(sleepAfternoonDropdown.value)"
+        [ngModel]="sleepAfternoon">
+        <option value="AM" label="AM" 
+        class="sleep-afternoon-option"></option>
+        <option value="PM" label="PM"
+        class="sleep-afternoon-option"></option>
+    </select>
+</div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TimeService } from '../time-service/time.service';
 
 @Component({
   selector: 'app-home',
@@ -35,13 +36,7 @@ export class HomeComponent {
 
   //Returns the current time
   getTime():string{
-    let hour:number | string = this.date.getHours();
-    if (hour==0 || hour==12) hour = 12;
-    else hour = hour%12;
-
-    let minute:string = (this.date.getMinutes()).toString();
-    minute = (minute.length==1?'0':'')+minute;
-    return hour+':'+minute+(this.date.getHours()>=12?" PM":" AM");
+    return TimeService.getFormattedTime({hours: this.date.getHours(),minutes:this.date.getMinutes()});
   }
 
   //Returns how many second

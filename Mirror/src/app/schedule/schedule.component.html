@@ -1,1 +1,14 @@
-<p>schedule works!</p>
+<div id="schedule" [style.display]="'flex'">
+    <hr id="current-time" [style.top.px]="getTimePosition()">
+
+    <div id="hours">
+        <div *ngFor="let hour of hours" [style.top.px]="getEventPosition(hour)" [innerHTML]="getHourTitle(hour.hours)"
+        class="hour" [id]="hour.hours">
+        </div>
+    </div>
+
+    <div id="events">
+        <div *ngFor="let event of events" [id]="event.name" class="event" 
+        [style.top.px]="getEventPosition(event.startTime)" [innerHTML]="getEventTitle(event)"></div>
+    </div>
+</div>
