@@ -10,3 +10,6 @@ A schedule that shows all of the events occuring throughout the current day.  Cu
 
 **Settings**
 The settings tab can change the time the mirror goes to sleep and wakes up.
+
+**Running**
+Open the directory and run the command ng serve.
