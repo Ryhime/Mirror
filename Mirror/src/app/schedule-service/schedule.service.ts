@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { ScheduledEvent } from '../scheduled-event';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ScheduleService {
+export class ScheduleService{
   private events:Array<ScheduledEvent> | undefined = undefined;
   constructor(){
     this.events = this.loadEvents();
   }
+
   loadEvents():Array<ScheduledEvent>{
     return [{
       startTime: {hours:7,minutes:30},
