@@ -20,13 +20,17 @@ export class HomeComponent {
   }
 
   //Returns the welcome text
-  getWelcomeText():string{
+  getWelcomeTextTop():string{
     let dayOfTheWeek = this.daysOfTheWeek[this.date.getDay()];
+    return "Happy "+dayOfTheWeek;
+  }
+
+  getWelcomeTextBottom():string{
     let hours = this.date.getHours();
-    if (hours>=6 && hours<=11) return "Happy "+dayOfTheWeek+", Have a Good Morning!";
-    else if (hours>=12 && hours<=17) return "Happy "+dayOfTheWeek+", Have a Good Afternoon!";
-    else if (hours>=18 && hours<=21) return "Happy "+dayOfTheWeek+", Have a Good Evening!";
-    else return "Happy "+dayOfTheWeek+", Have a Good Night!";
+    if (hours>=6 && hours<=11) return "Have a Good Morning!";
+    else if (hours>=12 && hours<=17) return "Have a Good Afternoon!";
+    else if (hours>=18 && hours<=21) return "Have a Good Evening!";
+    else return "Have a Good Night!";
   }
 
   //Returns the current date

@@ -5,16 +5,36 @@
 #awake-time-dropdown{
     width: 50px;
     height: 25px;
+    border:none;
+    background-color: rgb(204, 204, 204);
+}
+.awake-time-option{
+    background-color: rgb(204, 204, 204);
 }
 #awake-afternoon-dropdown{
     width: 50px;
     height: 25px;
+    border:none;
+    background-color: rgb(204, 204, 204);
+}
+.awake-afternoon-option{
+    background-color: rgb(204, 204, 204);
 }
 #sleep-time-dropdown{
     width: 50px;
     height: 25px;
+    background-color: rgb(204, 204, 204);
+    border:none;
+}
+.sleep-time-option{
+    background-color: rgb(204, 204, 204);
 }
 #sleep-afternoon-dropdown{
     width: 50px;
     height: 25px;
+    background-color: rgb(204, 204, 204);
+    border: none;
+}
+.sleep-afternoon-option{
+    background-color: rgb(204, 204, 204);
 }
