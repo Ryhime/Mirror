@@ -5,3 +5,11 @@
 #hours-minutes{
     margin: 0px 0px -10px 0px;
 }
+#time-container{
+    width: 50%;
+    float:left;
+}
+#weather-container{
+    width: 50%;
+    float:left;
+}
