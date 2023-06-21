@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { TimeService } from '../time-service/time.service';
 enum Weather{
-  Sun = 'SUN',
-  Cloud = 'CLOUD',
-  Rain = 'RAIN',
-  Snow = 'SNOW'
+  Sun,
+  Cloud,
+  Rain,
+  Snow
 }
 enum Day{
   Sunday = 0,
@@ -95,6 +95,19 @@ export class HomeComponent {
     return '';
   }
 
+  //Get image url for the weather
+  getWeatherImage(futureIndex:number):string{
+    const forecast:string | undefined | null = this.getWeatherForecast(futureIndex);
+    if (!forecast) return '';
+    switch (forecast){
+      case 'Cloud': return "../../assets/images/Cloudy.png";
+      case 'Sun': return "../../assets/images/Sun.png";
+      case 'Rain': return "../../assets/images/Rain.png";
+      case 'Snow': return "../../assets/images/Snow.png";
+    }
+    return '';
+  }
+
   //Get temperature
   getTemperature(futureIndex:number):number | undefined | null{
     if (!this.forecastJson) return this.forecastJson;
@@ -104,12 +117,20 @@ export class HomeComponent {
   //Get precipitation chance
   getPrecipitationChance(futureIndex:number):number | undefined | null{
     if (!this.forecastJson) return this.forecastJson;
-    return this.forecastJson.properties.periods[futureIndex].probabilityOfPrecipitation.value;
+    const prob = this.forecastJson.properties.periods[futureIndex].probabilityOfPrecipitation.value;
+    if (!prob) return 0;
+    return prob;
   }
 
   //Get wind speed
   getWindSpeed(futureIndex:number):string{
     if (!this.forecastJson) return this.forecastJson;
     return this.forecastJson.properties.periods[futureIndex].windSpeed;
+  }
+
+  //Get if the time period is day or not
+  getIsDayTime(futureIndex:number):boolean{
+    if (!this.forecastJson) return false;
+    return this.forecastJson.properties.periods[futureIndex].isDaytime;
   }
 }
