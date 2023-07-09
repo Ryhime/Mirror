@@ -15,7 +15,7 @@ export class SettingsComponent {
   sleepAfternoon:"AM" | "PM" = "PM";
 
   constructor(){
-    for(let i:number=0;i<13;i++){
+    for(let i:number=1;i<=12;i++){
       this.times.push(i);
     }
   }

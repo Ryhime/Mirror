@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { TimeService } from '../time-service/time.service';
 enum Weather{
-  Sun,
-  Cloud,
-  Rain,
-  Snow
+  Sun = 'Sun',
+  Cloud = 'Cloud',
+  Rain = 'Rain',
+  Snow = 'Snow'
 }
 enum Day{
   Sunday = 0,
@@ -42,7 +42,7 @@ export class HomeComponent {
 
     try{
       fetch(this.forecastURL).then((response)=>{return response.text()}).     
-      then((responseText)=>{this.forecastJson = JSON.parse(responseText);});
+      then((responseText)=>{this.forecastJson = JSON.parse(responseText);}); 
     }
     catch(e){
       this.forecastJson = null;
@@ -82,7 +82,7 @@ export class HomeComponent {
   //Get the weather string
   getRawWeatherForecast(futureIndex:number):string | undefined | null{
     if (!this.forecastJson) return this.forecastJson;
-    return this.forecastJson.properties.periods[futureIndex].shortForecast;
+    return this.forecastJson.properties.periods[futureIndex].detailedForecast;
   }
 
   //Gets a basic version of the forecast
@@ -90,6 +90,7 @@ export class HomeComponent {
     if (!this.forecastJson) return this.forecastJson;
     const rawWeatherForecast = this.getRawWeatherForecast(futureIndex)!.toLowerCase();
     for (let weather in Weather){
+      console.log(weather.toString());
       if (rawWeatherForecast.includes(weather.toLowerCase())) return weather;
     }
     return '';
