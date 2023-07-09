@@ -1,21 +1,50 @@
-<div id="Day">
-<h2 [innerHTML]="getWelcomeTextTop()"></h2>
-<h2 [innerHTML]="getWelcomeTextBottom()"></h2>
+<div id="home-page-container">
+    <div id="time-container">
+        <div id="day">
+        <h2 [innerHTML]="getWelcomeTextTop()"></h2>
+        <h2 [innerHTML]="getWelcomeTextBottom()"></h2>
+        </div>
 
-</div>
-<div id="time">
-    <h2 [innerHTML]="getTime()" id="hours-minutes"></h2>
-    <table>
-        <tr>
-            <td *ngFor="let block of [].constructor(getNumSecondBlocks(maxNumSecondBlocks))">
-                <img src="../../assets/images/BlackDot.png" id="seconds-counter">
-            </td>
-            <td *ngIf="date.getSeconds()%blinkBlockSeconds==0">
-                <img src="../../assets/images/BlackDot.png" id='seconds-counter'>
-            </td>
-        </tr>   
-    </table>
-</div>
-<div id="date">
-    <h2 [innerHTML]="getDate()"></h2>
+        <div id="time">
+            <h2 [innerHTML]="getTime()" id="hours-minutes"></h2>
+            <table>
+                <tr>
+                    <td *ngFor="let block of [].constructor(getNumSecondBlocks(maxNumSecondBlocks))">
+                        <img src="../../assets/images/BlackDot.png" id="seconds-counter">
+                    </td>
+                    <td *ngIf="date.getSeconds()%blinkBlockSeconds==0">
+                        <img src="../../assets/images/BlackDot.png" id='seconds-counter'>
+                    </td>
+                </tr>   
+            </table>
+        </div>
+
+        <div id="date">
+            <h2 [innerHTML]="getDate()"></h2>
+        </div>
+    </div>
+
+    <div id="weather-container">
+        <div id="primary-weather-container">
+            <div [innerHTML]="getPrecipitationChance(0)+'% Chance of Precipitation'"></div>
+            <div [innerHTML]="getWindSpeed(0).toUpperCase()+' Wind Speed'"></div>
+        </div>
+        <div id="future-weather-container">
+            <div id="weather-zero">
+                <img id="weather-zero-image" [src]="getWeatherImage(0)">
+                <div id="weather-zero-temperature" [innerHTML]="'Now: '+getTemperature(0)+'°F'"></div>
+            </div>
+            <div id="weather-one">
+                <img id="weather-one-image" [src]="getWeatherImage(1)">
+                <div id="weather-one-temperature"
+                [innerHTML]="(getIsDayTime(1)?'Tomorrow: ':'Tonight: ')+getTemperature(1)+'°F'"></div>
+            </div>
+            <div id="weather-two">
+                <img id="weather-two-image" [src]="getWeatherImage(2)">
+                <div id="weather-two-temperature"
+                [innerHTML]="(getIsDayTime(2)?'Tomorrow: ':'Tomorrow Night: ')+getTemperature(2)+'°F'"></div>
+            </div>
+        </div>
+
+    </div>
 </div>

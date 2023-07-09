@@ -5,3 +5,38 @@
 #hours-minutes{
     margin: 0px 0px -10px 0px;
 }
+#time-container{
+    width: 50%;
+    float:left;
+}
+#weather-container{
+    width: 50%;
+    float:left;
+}
+#primary-weather-container{
+    width:50%;
+    float:left;
+}
+#future-weather-container{
+    width:50%;
+    float:left;
+    text-align: center;
+}
+#weather-zero-image{
+    width: 50%;
+}
+#weather-zero-temperature{
+    font-size: small;
+}
+#weather-one-image{
+    width: 40%;
+}
+#weather-one-temperature{
+    font-size: x-small;
+}
+#weather-two-image{ 
+    width: 30%;
+}
+#weather-two-temperature{
+    font-size: xx-small;
+}
