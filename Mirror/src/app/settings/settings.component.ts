@@ -22,7 +22,6 @@ export class SettingsComponent {
 
   changedAwakeTime(newValue:string):void{
     this.awakeTime = newValue;
-
   }
   changedAwakeAfternoon(newValue:string):void{
     if (newValue!=="AM" && newValue!=="PM") return;
