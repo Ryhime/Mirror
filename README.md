@@ -1,4 +1,4 @@
-# Mirror
+# Mirror - Work in Progress
 The application component to a digital mirror appears on the monitor. It has three sections Home, Schedule, and Settings.
 
 **Home**
