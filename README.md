@@ -12,6 +12,3 @@ The settings tab can change the time the mirror goes to sleep and wakes up.
 
 **Running**
 Open the directory and run the command ng serve.
-
-
-https://trello.com/b/iDgcsIhT/mirror
